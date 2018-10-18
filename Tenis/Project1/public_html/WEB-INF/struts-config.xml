@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="InicialForm" type="mypackage1.InicialForm"/>
+    <form-bean name="BuenoForm" type="mypackage1.BuenoForm"/>
+    <form-bean name="GesJForm" type="mypackage1.GesJForm"/>
+    <form-bean name="AltasJForm" type="mypackage1.AltasJForm"/>
+    <form-bean name="AltasAForm" type="mypackage1.AltasAForm"/>
+    <form-bean name="AltasEForm" type="mypackage1.AltasEForm"/>
+    <form-bean name="AltasPForm" type="mypackage1.AltasPForm"/>
+    <form-bean name="AltasTForm" type="mypackage1.AltasTForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="malo" path="/Malo.jsp"/>
+    <forward name="bien" path="/Bien.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/inicial" type="mypackage1.InicialAction" name="InicialForm" scope="request" input="Inicial.jsp">
+      <forward name="exito" path="/Bueno.jsp"/>
+      <forward name="fallo" path="/Malo.jsp"/>
+    </action>
+    <action path="/menu" type="mypackage1.BuenoAction" name="BuenoForm" input="Bueno.jsp" scope="request">
+      <forward name="altaj" path="/AltasJ.jsp"/>
+      <forward name="altaa" path="/AltasA.jsp"/>
+      <forward name="altap" path="/AltasP.jsp"/>
+      <forward name="altat" path="/AltasT.jsp"/>
+      <forward name="altae" path="/AltasE.jsp"/>
+      <forward name="listaj" path="/ListarJ.jsp"/>
+      <forward name="listaa" path="/ListarA.jsp"/>
+      <forward name="listap" path="/ListarP.jsp"/>
+      <forward name="listat" path="/ListarT.jsp"/>
+        <forward name="listae" path="/ListarE.jsp"/>
+    </action>
+    <action path="/altj" type="mypackage1.AltasJAction" name="AltasJForm" input="AltasJ.jsp" scope="request"/>
+    <action path="/alta" type="mypackage1.AltasAAction" name="AltasAForm" input="/AltasA.jsp" scope="request"/>
+    <action path="/alte" type="mypackage1.AltasEAction" name="AltasEForm" input="/AltasE.jsp" scope="request"/>
+    <action path="/altp" type="mypackage1.AltasPAction" name="AltasPForm" input="/AltasP.jsp" scope="request"/>
+    <action path="/altt" type="mypackage1.AltasTAction" name="AltasTForm" input="/AltasT.jsp" scope="request"/>
+
+  </action-mappings>
+  <message-resources parameter="mypackage1.ApplicationResources"/>
+</struts-config>
