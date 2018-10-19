@@ -41,7 +41,7 @@ public class BuenoAction extends Action
     to="altaa";
      if(bot.equals("Listar Arbitro"))
       to="listaa";
-    if(bot.equals("Registrar Partido"))
+    if(bot.equals("Regsitrar Partido"))
     to="altap";
     if(bot.equals("Listar Partido"))
       to="listap";
